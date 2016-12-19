@@ -4,9 +4,9 @@
 
 using namespace std;
 
-main (int argc, char** argv)
+int main (int argc, char** argv)
 	{
-		keyCryptManager crypt(argv);
+		keyCryptManager* crypt;
 		
 		if (argc != 10)													/***************/
 			{															/*IN DEBUG MODE*/
@@ -14,10 +14,16 @@ main (int argc, char** argv)
 			}
 		else
 			{
+				crypt = new keyCryptManager(argv);
+
 				for (int i = 0; i < 8; i++)
 					{
-						cout << endl << crypt.keyReturn(i);				//stampa l'argomento
+						cout << endl << crypt -> keyReturn(i);				//stampa chiave decriptata per parametro
 					}
+				
+				crypt -> cryptArray();
+				cout << endl;
+				crypt -> printArrayResult();
 			}
 			
 		getch();														//IN DEBUG MODE		

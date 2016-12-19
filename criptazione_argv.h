@@ -13,10 +13,10 @@ class keyCryptManager
 			
 		public:
 			
-			keyCryptManager(char** argv);						//	Costruttore dell'Oggetto: richiama i metodi privati in modo tale da ricavare le chiavi decriptate.
+			keyCryptManager(char** argv);						//	Costruttore dell'Oggetto: richiama i metodi privati in modo tale da salvare nella variabile key le chiavi decriptate.
 			
-			void printArrayResult(int key[][8]);				//	PER DEBUG
-			void cryptArray(int workCryptArray[][8]);			//	PER DEBUG
+			void printArrayResult();							//	PER DEBUG
+			void cryptArray();									//	PER DEBUG
 			void printResult(int key[8]);						//	PER DEBUG
 			
 			int keyReturn(int);									//	Ritorna il valore della chiave desiderata (parametro indice della chiave)

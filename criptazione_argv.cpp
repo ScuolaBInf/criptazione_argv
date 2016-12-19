@@ -5,6 +5,14 @@
 
 using namespace std;
 
+keyCryptManager::keyCryptManager(char** argv)
+	{
+		convertStringToInt(argv);
+		convertIntToArrayInt();
+		decryptCryptedArray();
+		convertArrayToInt();
+	}
+	
 void keyCryptManager::convertStringToInt(char** argv)
 	{
 		for (int i = 0; i < 8; i++)
@@ -74,14 +82,14 @@ void keyCryptManager::convertArrayToInt()
 
 /**************************************** in debug mode ****************************************/
 /***/																						/***/
-/***/	void keyCryptManager::printArrayResult(int key[][8])													/***/
+/***/	void keyCryptManager::printArrayResult()													/***/
 /***/	{																					/***/
 /***/		cout << endl;																	/***/
 /***/		for (int i = 0; i < 8; i++)														/***/
 /***/			{																			/***/
 /***/				for (int j = 0; j < 8; j++)												/***/
 /***/					{																	/***/
-/***/						cout << key[7 - j][7 - i];										/***/
+/***/						cout << workCryptArray[7 - j][7 - i];										/***/
 /***/					}																	/***/
 /***/				cout << endl;															/***/
 /***/			}																			/***/
@@ -90,7 +98,7 @@ void keyCryptManager::convertArrayToInt()
 /***/																						/***/
 /**************************************** in debug mode ****************************************/
 /***/																						/***/
-/***/	void keyCryptManager::cryptArray(int workCryptArray[][8])											/***/
+/***/	void keyCryptManager::cryptArray()											/***/
 /***/	{																					/***/
 /***/		for (int i = 0; i < 8; i++)														/***/
 /***/			{																			/***/
@@ -135,14 +143,6 @@ void keyCryptManager::convertArrayToInt()
 /***/	}																					/***/
 /***/																						/***/
 /**************************************** in debug mode ****************************************/
-
-keyCryptManager::keyCryptManager(char** argv)
-	{
-		convertStringToInt(argv);				//converte i parametri argv, passati dal Patcher, in un numero intero, necessita della libreria standard del C\C++ stdlib.h, la funzione interesserà solamente i parametri delle chiavi, non altri parametri (come ad esempio il nome o il parametro di controllo)
-		convertIntToArrayInt();	//in preparazione all'algoritmo di criptazione trasferisce le 8 chiavi di tipo intero in una matrice 8x8.		
-		decryptCryptedArray();		//cripta l'intera matrice sulla base dell'algoritmo di criptazione.
-		convertArrayToInt();		//converte la matrice di interi in un array di interi, ovvero l'array contentente le 8 chiavi precedentemente offuscate
-	}
 	
 int keyCryptManager::keyReturn(int keyNum)
 	{
