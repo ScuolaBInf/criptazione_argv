@@ -17,7 +17,7 @@ class keyCryptManager
 			
 			void printArrayResult();							//	PER DEBUG
 			void cryptArray();									//	PER DEBUG
-			void printResult(int key[8]);						//	PER DEBUG
+			void printResult();									//	PER DEBUG
 			
 			int keyReturn(int);									//	Ritorna il valore della chiave desiderata (parametro indice della chiave)
 	};

@@ -136,7 +136,7 @@ void keyCryptManager::convertArrayToInt()
 /***/																						/***/
 /**************************************** in debug mode ****************************************/
 /***/																						/***/
-/***/	void keyCryptManager::printResult(int key[8])														/***/
+/***/	void keyCryptManager::printResult()														/***/
 /***/	{																					/***/
 /***/		for (int i = 0; i < 8; i++)														/***/
 /***/		cout << key[i] << endl;															/***/
