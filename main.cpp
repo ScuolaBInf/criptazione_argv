@@ -4,6 +4,8 @@
 
 using namespace std;
 
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
 main (int argc, char** argv)
 	{
 		keyCryptManager crypt;
@@ -14,20 +16,9 @@ main (int argc, char** argv)
 			}
 		else
 			{
-				int key[] =
-					{
-						crypt.decrypt(argv, 1),
-						crypt.decrypt(argv, 2),
-						crypt.decrypt(argv, 3),
-						crypt.decrypt(argv, 4),	
-						crypt.decrypt(argv, 5),
-						crypt.decrypt(argv, 6),
-						crypt.decrypt(argv, 7),
-						crypt.decrypt(argv, 8),
-					};
-					
-				for (int i = 0; i < 8; i++) 
-				cout << key[i] << endl;
+				crypt.decrypt(argv);
+				for (int i = 0; i < 8; i++)
+				cout << endl << crypt.keyReturn(i);
 			}
 			
 		getch();														//IN DEBUG MODE		

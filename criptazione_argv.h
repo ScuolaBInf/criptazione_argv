@@ -13,9 +13,11 @@ class keyCryptManager
 			
 		public:
 			
-			int decrypt(char** argv, int keyNum);
+			void decrypt(char** argv);
 			
 			void printArrayResult(int key[][8]);
 			void cryptArray(int workCryptArray[][8]);
 			void printResult(int key[8]);
+			
+			int keyReturn(int);
 	};
