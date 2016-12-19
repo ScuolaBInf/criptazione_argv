@@ -13,7 +13,7 @@ class keyCryptManager
 			
 		public:
 			
-			int* decrypt(char** argv);
+			int decrypt(char** argv, int keyNum);
 			
 			void printArrayResult(int key[][8]);
 			void cryptArray(int workCryptArray[][8]);
