@@ -4,11 +4,9 @@
 
 using namespace std;
 
-/* run this program using the console pauser or add your own getch, system("pause") or input loop */
-
 main (int argc, char** argv)
 	{
-		keyCryptManager crypt;
+		keyCryptManager crypt(argv);
 		
 		if (argc != 10)													/***************/
 			{															/*IN DEBUG MODE*/
@@ -16,9 +14,10 @@ main (int argc, char** argv)
 			}
 		else
 			{
-				crypt.decrypt(argv);
 				for (int i = 0; i < 8; i++)
-				cout << endl << crypt.keyReturn(i);
+					{
+						cout << endl << crypt.keyReturn(i);				//stampa l'argomento
+					}
 			}
 			
 		getch();														//IN DEBUG MODE		

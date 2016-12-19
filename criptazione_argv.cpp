@@ -136,7 +136,7 @@ void keyCryptManager::convertArrayToInt()
 /***/																						/***/
 /**************************************** in debug mode ****************************************/
 
-void keyCryptManager::decrypt(char** argv)
+keyCryptManager::keyCryptManager(char** argv)
 	{
 		convertStringToInt(argv);				//converte i parametri argv, passati dal Patcher, in un numero intero, necessita della libreria standard del C\C++ stdlib.h, la funzione interesserà solamente i parametri delle chiavi, non altri parametri (come ad esempio il nome o il parametro di controllo)
 		convertIntToArrayInt();	//in preparazione all'algoritmo di criptazione trasferisce le 8 chiavi di tipo intero in una matrice 8x8.		
